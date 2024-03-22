@@ -1,12 +1,8 @@
 <?php
 
-// Traitement - Récupération des donnees
-try {
-    $bdd = new PDO('mysql:host=localhost;dbname=mvc;charset=utf8', 'root', '');
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
+require('modeleUtilisateurs.php');
 
-$requete = $bdd->query('SELECT * FROM utilisateurs');
+$requete = getUtilisateurs();
 
+// Affichage
 require('vueAccueil.php');

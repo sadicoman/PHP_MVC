@@ -1,6 +1,6 @@
 <?php
 // Traitement - Récupération des donnees
-function getUtilisateurs()
+function getUsers()
 {
     try {
         $bdd = new PDO('mysql:host=localhost;dbname=mvc;charset=utf8', 'root', '');

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Vive le MVC !</title>
-    <link rel="stylesheet" href="design/default.css" />
+    <link rel="stylesheet" href="public/design/default.css" />
 </head>
 
 <body>

@@ -1,6 +1,6 @@
 <?php
 
-function getAvis()
+function getTestimonials()
 {
 
     try {

@@ -1,8 +1,14 @@
 <?php
 
-require('modeleUtilisateurs.php');
+// Routeur 
+require('controller/controller.php');
 
-$requete = getUtilisateurs();
-
-// Affichage
-require('vueAccueil.php');
+if (isset($_GET['page'])) {
+    if ($_GET['page'] == 'accueil') {
+        home();
+    } elseif ($_GET['page'] == 'avis') {
+        testimonials();
+    }
+} else {
+    home();
+}

@@ -1,14 +1,15 @@
 <?php
-// Traitement - Récupération des donnees
-function getUsers()
+
+require_once('Manager.php');
+
+class UserManager extends Manager
 {
-    try {
-        $bdd = new PDO('mysql:host=localhost;dbname=mvc;charset=utf8', 'root', '');
-    } catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage());
+    public function getUsers()
+    {
+        $bdd = $this->connection();
+
+        $requete = $bdd->query('SELECT * FROM users');
+
+        return $requete;
     }
-
-    $requete = $bdd->query('SELECT * FROM users');
-
-    return $requete;
 }

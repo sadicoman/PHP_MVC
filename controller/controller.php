@@ -1,18 +1,20 @@
 <?php
 
-require('model/modeleUtilisateurs.php');
-require('model/modeleAvis.php');
+require_once('model/modeleUtilisateurs.php');
+require_once('model/modeleAvis.php');
 
 function home()
 {
-    $requete = getUsers();
+    $userManager = new UserManager();
+    $requete = $userManager->getUsers();
 
     require('view/listUserView.php');
 }
 
 function testimonials()
 {
-    $requete = getTestimonials();
+    $testimonialManager = new TestimonialManager();
+    $requete = $testimonialManager->getTestimonials();
 
     require('view/liestTestimonialsView.php');
 }

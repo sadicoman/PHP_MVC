@@ -1,37 +1,28 @@
-<!DOCTYPE html>
-<html>
+<?php
+$title = "Accueil";
 
-<head>
-    <meta charset="utf-8">
-    <title>Vive le MVC !</title>
-    <link rel="stylesheet" href="public/design/default.css" />
-</head>
+ob_start();
+?>
+<section class="container">
 
-<body>
+    <h1>Bienvenue sur mon site MVC</h1>
+    <p>Voici la liste des utilisateurs :</p>
 
-    <header>
-        <span>MVC</span>
-    </header>
-
-    <section class="container">
-
-        <h1>Bienvenue sur mon site MVC</h1>
-        <p>Voici la liste des utilisateurs :</p>
-
-        <?php
+    <?php
 
 
 
-        while ($utilisateur = $requete->fetch()) {
+    while ($utilisateur = $requete->fetch()) {
 
-        ?>
-            <p><b><?= $utilisateur['first_name'] ?> <?= $utilisateur['last_name'] ?></b> : <?= $utilisateur['email'] ?></p>
-        <?php
-        }
-        ?>
+    ?>
+        <p><b><?= $utilisateur['first_name'] ?> <?= $utilisateur['last_name'] ?></b> : <?= $utilisateur['email'] ?></p>
+    <?php
+    }
+    ?>
 
-    </section>
+</section>
 
-</body>
+<?php
+$content = ob_get_clean();
 
-</html>
+require('base.php');

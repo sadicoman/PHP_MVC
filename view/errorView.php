@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html>
+<?php
+$title = "Erreur";
 
-<head>
-    <meta charset="utf-8">
-    <title>Vive le MVC !</title>
-    <link rel="stylesheet" href="public/design/default.css" />
-</head>
+ob_start();
+?>
 
-<body>
+<section class="container">
+    <h1>Oups</h1>
+    <p><?= $error ?></p>
+</section>
 
-    <header>
-        <span>MVC</span>
-    </header>
+<?php
+$content = ob_get_clean();
 
-    <section class="container">
-        <h1>Oups</h1>
-        <p><?= $error ?></p>
-    </section>
-
-</body>
-
-</html>
+require('base.php');

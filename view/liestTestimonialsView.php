@@ -1,40 +1,32 @@
-<!DOCTYPE html>
-<html>
+<?php
+$title = "Témoignages";
 
-<head>
-    <meta charset="utf-8">
-    <title>Vive le MVC !</title>
-    <link rel="stylesheet" href="public/design/default.css" />
-</head>
+ob_start();
+?>
 
-<body>
+<section class="container">
 
-    <header>
-        <span>MVC</span>
-    </header>
+    <h1>Avis</h1>
+    <p>Voici la liste des avis :</p>
 
-    <section class="container">
-
-        <h1>Avis</h1>
-        <p>Voici la liste des avis :</p>
-
-        <?php
+    <?php
 
 
 
-        while ($avis = $requete->fetch()) {
+    while ($avis = $requete->fetch()) {
 
-        ?>
-            <p>
-                <b><?= $avis['note'] ?> /5 </b>
-                <?= $avis['content'] ?>
-            </p>
-        <?php
-        }
-        ?>
+    ?>
+        <p>
+            <b><?= $avis['note'] ?> /5 </b>
+            <?= $avis['content'] ?>
+        </p>
+    <?php
+    }
+    ?>
 
-    </section>
+</section>
 
-</body>
+<?php
+$content = ob_get_clean();
 
-</html>
+require('base.php');

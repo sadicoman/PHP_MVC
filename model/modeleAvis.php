@@ -12,4 +12,15 @@ class TestimonialManager extends Manager
 
         return $requete;
     }
+
+    public function postTestimonials($note, $commentaire)
+    {
+        $bdd = $this->connection();
+        $requete = $bdd->prepare('INSERT INTO testimonials(note, content) VALUES(:note, :commentaire)');
+        $requete->bindParam(':note', $note);
+        $requete->bindParam(':commentaire', $commentaire);
+        $result = $requete->execute();
+
+        return $result;
+    }
 }
